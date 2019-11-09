@@ -9,6 +9,10 @@
         <a href="/portfolio">to portfolio</a>
         <br>
 
+        {% if name %}
+        <p>Hello {{name}}!</p>
+        {% endif %}
+
         <h2>Testformular:</h2>
         <form method="post" action="/about">
             <input type="text" name="contact-name" placeholder="Enter your name">
