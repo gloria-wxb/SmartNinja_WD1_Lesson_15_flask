@@ -1,17 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="/static/css/style.css">
-        <title>Hello, SmartNinja</title>
-    </head>
+{% extends "base.html" %}
 
-    <body>
-        <h1>Welcome back to HTML ;)</h1>
+{% block title%}Welcome{% endblock title %}
+
+{% block content %}
+        <h1>Winter is coming ...</h1>
+
+        <p>{{some_text}}</p>
+        <p>Current year: {{current_year}}</p>
+
+        {% for city in cities %}
+                <p>{{city}}</p>
+        {% endfor %}
+
+        {% if cities %}
+                <p>Das Array cities existiert</p>
+        {% else %}
+                <p>Kein Array vorhanden</p>
+        {% endif %}
+
         <a href="/portfolio">to portfolio</a>
         <br> <br>
         <a href="/about">to about</a>
         <br>
-        <img src="/static/img/halloween.jpg"/>
-    </body>
-</html>
+        <img src="/static/img/christmas.jpg"/>
+{% endblock content %}
